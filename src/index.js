@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import * as Sentry from '@sentry/browser';
 
-import { store, persistor, Errors, Routes } from './configs';
-
+import { store, persistor, Errors, Routes, Contexts } from './configs';
+import { Layout } from './app/common';
 import { version } from '../package.json';
 
 if (process.env.NODE_ENV === 'production') {
@@ -19,7 +19,11 @@ ReactDOM.render(
   <Errors>
     <Provider store={store}>
       <PersistGate loading={<p>Loading...</p>} persistor={persistor}>
-        <Routes />
+        <Contexts>
+          <Layout>
+            <Routes />
+          </Layout>
+        </Contexts>
       </PersistGate>
     </Provider>
   </Errors>,
