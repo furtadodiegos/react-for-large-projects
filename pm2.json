@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "script": "./server.js",
+  "instances": "max",
+  "watch": true,
+  "exec_mode": "cluster",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
