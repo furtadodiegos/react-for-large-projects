@@ -10,7 +10,7 @@ import { version } from '../package.json';
 
 if (process.env.NODE_ENV === 'production') {
   Sentry.init({
-    dsn: process.env.REACT_APP_SENTRY_DNS,
+    dsn: process.env.REACT_APP_SENTRY_DSN,
     release: version,
   });
 }

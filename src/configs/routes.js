@@ -5,8 +5,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { history } from './store';
 
+import { StockPage } from '../app/stock';
+
 const pages = [
-  { path: '/', exact: true, component: () => <p>Hello Home!</p> },
+  { path: '/', exact: true, component: StockPage },
   { path: '/404', exact: true, component: () => <p>Page Not Found</p> },
 ];
 

@@ -45,4 +45,6 @@ sagaMiddleware.run(Sagas);
 // Object used to start the PersisGate HOC on entry point application(index.js)
 const persistor = persistStore(store);
 
+if (process.env.REACT_APP_TEST_MODE === 'true') persistor.purge();
+
 export { store, history, persistor };

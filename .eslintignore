@@ -5,3 +5,4 @@ README.md
 yarn.lock
 .circleci
 public
+cypress

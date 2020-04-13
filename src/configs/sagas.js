@@ -1,8 +1,7 @@
 import { all } from 'redux-saga/effects';
 
-// Import your sagas here
-// import {} from '';
+import { StockSagas } from '../app/stock';
 
 export default function* Sagas() {
-  yield all([]); // All Sagas
+  yield all([StockSagas()]);
 }

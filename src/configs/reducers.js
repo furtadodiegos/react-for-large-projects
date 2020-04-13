@@ -1,14 +1,20 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
-// Import your reducers here
-// import {} from '';
+import { StockReducer } from '../app/stock';
 
-// Reducers configs
+// Reducer used to show messages from each action
+const responseMessage = (state, { payload }) => ({
+  success: payload?.success || '',
+  error: payload?.error || '',
+});
+
+// Instantiate all reducers here
 const Reducers = (history) =>
   combineReducers({
     router: connectRouter(history),
-    // Reducers
+    responseMessage,
+    stock: StockReducer,
   });
 
 export default Reducers;

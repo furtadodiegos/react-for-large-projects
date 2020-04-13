@@ -3,7 +3,8 @@
     "browser": true,
     "es6": true,
     "jest": true,
-    "node": true
+    "node": true,
+    "cypress/globals": true
   },
   "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "parser": "babel-eslint",
@@ -15,7 +16,7 @@
     "sourceType": "module",
     "allowImportExportEverywhere": true
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "cypress"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": ["error"],

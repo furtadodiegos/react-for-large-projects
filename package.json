@@ -4,13 +4,18 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.9",
+    "@material-ui/icons": "^4.9.1",
     "@sentry/browser": "^5.15.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
     "connected-react-router": "^6.8.0",
     "express": "^4.17.1",
+    "formik": "^2.1.4",
     "history": "^4.10.1",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -21,15 +26,23 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "redux-saga": "^1.1.3"
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0",
+    "uuid": "^7.0.3",
+    "yup": "^0.28.3"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-with-cy": "cross-env REACT_APP_TEST_MODE=true react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
+    "test-cy": "concurrently --kill-others-on-fail \"yarn start-with-cy\" \"yarn cy-run\"",
     "eject": "react-scripts eject",
     "release": "standard-version",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "cy-dev": "concurrently --kill-others-on-fail \"yarn start-with-cy\" \"yarn cy-open\"",
+    "cy-open": "wait-on http://localhost:3000 && cypress open",
+    "cy-run": "wait-on http://localhost:3000 && cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,12 +62,17 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/jest": "^25.2.1",
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.0.3",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
+    "cypress": "^4.3.0",
     "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
@@ -63,7 +81,10 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.1.2",
     "prettier": "^2.0.4",
-    "standard-version": "^7.1.0"
+    "redux-mock-store": "^1.5.4",
+    "redux-saga-test-plan": "^4.0.0-rc.3",
+    "standard-version": "^7.1.0",
+    "wait-on": "^4.0.2"
   },
   "config": {
     "commitizen": {
