@@ -1,3 +1,3 @@
 ## MEDIUM - React for large projects
 
-Open [Medium](https://medium.com/@furtado.diegos/react-para-grandes-projetos-parte-1-cf581f31b83e?sk=a8386ebe04a51278f1e5228c85bee17d) to see the tutorial.
+Open [Medium](https://medium.com/@furtado.diegos/react-para-grandes-projetos-parte-2-ccdeac6b59d2) to see the tutorial.
